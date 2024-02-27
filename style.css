@@ -1,0 +1,187 @@
+font-family: 'Russo One', sans-serif;
+font-family: 'Six Caps', sans-serif;
+
+header {
+    background-color: #4CBB17;
+    color: #F8EEEC;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Style navigation */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #4CBB17;
+    text-decoration: none;
+}
+
+/* Enhance main content */
+.clothing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.clothing-item {
+    width: 250px;
+    margin: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.clothing-item:hover {
+    transform: translateY(-5px);
+}
+
+.clothing-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.clothing-item h2 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.clothing-item p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Footer style */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/background-color/
+#pazzo {
+    background-color: skyblue;
+    list-style-type: none;
+    padding: 25px 30px;
+}
+/color change/
+li a{
+    text-decoration: none;
+    color: black;
+    padding: 9px 15px;
+}
+li a:hover {
+    color: #16be42;
+    background-color: white;
+}
+
+ }
+/*align registerform */
+ #registerform {
+    background-color: skyblue;
+    border-radius: 10px;
+    margin: 40px 80px;
+    padding: 15px;
+ }
+ 
+ 
+ input, select, label {
+    border-radius: 15px;
+    display: block;
+    margin: 10px 15px;
+    text-align: center;
+    width: 98%;
+}
+input, select, label {
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 90%;
+}
+input, textarea {
+    width: 90%;
+    border-radius: 10px;
+    padding: 10px 30px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Style buttons */
+button, input[type="button"], input[type="submit"] {
+    background-color: #333;
+    color: white;
+    margin-top: 8px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    
+}
+
+
+/* Change button color on hover */
+button:hover, input[type="button"]:hover, input[type="submit"]:hover {
+    background-color: #006E90;
+    
+}
+
+
+}
+#locations {
+    background-color: black;
+    height: 15;
+    width: 30%;
+}
+#flex {
+    float: right;
+    height: 210px;
+    width: 15%;
+    padding: 0 10px;
+}
+#contactus {
+    float: right;
+    background-color: black;
+    width: 30%;
+}
+/* Style footer */
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 2px 4px;
+    position: fixed;
+    bottom: 0;
+    width: 99%;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation Example</title>
+<script>
+function validateForm() {
+    var username = document.getElementById('username').value;
+    var dob = document.getElementById('dob').value;
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
+    var phoneNumber = document.getElementById('phoneNumber').value;
+    
+    // Validate username (only alphabetic characters, no spaces or numbers)
+    var usernameRegex = /^[a-zA-Z]+$/;
+    if (!username.match(usernameRegex)) {
+        alert("Username should contain only alphabetic characters");
+        return false;
+    }
+    
+    // Validate date of birth
+    if (!isValidDate(dob)) {
+        alert("Invalid date of birth");
+        return false;
+    }
+    
+    // Validate password strength
+    var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+    if (!password.match(passwordRegex)) {
+        alert("Password should contain at least 8 characters including uppercase, lowercase letters, numbers, and special characters");
+        return false;
+    }
+    
+    // Confirm password match
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+    }
+    
+    // Validate phone number
+    var phoneNumberRegex = /^\d{10}$/; // Assuming 10-digit phone numbers
+    if (!phoneNumber.match(phoneNumberRegex)) {
+        alert("Invalid phone number");
+        return false;
+    }
+    
+    // All validations passed
+    var selectedAccount = document.querySelector('input[name="account"]:checked');
+    var accountType = selectedAccount ? selectedAccount.value : "";
+    alert("You have successfully registered as " + accountType);
+    return true;
+}
+
+function isValidDate(dateString) {
+    var regex = /^\d{4}-\d{2}-\d{2}$/;
+    if(!regex.test(dateString)) return false;
+    var parts = dateString.split("-");
+    var year = parseInt(parts[0], 10);
+    var month = parseInt(parts[1], 10);
+    var day = parseInt(parts[2], 10);
+    if(month < 1 || month > 12) return false;
+    if(day < 1 || day > 31) return false;
+    if((month==4 || month==6 || month==9 || month==11) && day==31) return false;
+    if(month == 2) {
+        var leap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+        if(day>29 || (day==29 && !leap)) return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body>
+<h2>Registration Form</h2>
+<form onsubmit="return validateForm()">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    
+    <label for="dob">Date of Birth:</label>
+    <input type="text" id="dob" name="dob" placeholder="YYYY-MM-DD" required><br><br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+    
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" required><br><br>
+    
+    <label for="account">Select Account Type:</label><br>
+    <input type="radio" id="farmer" name="account" value="Farmer" required>
+    <label for="farmer">Farmer</label><br>
+    <input type="radio" id="student" name="account" value="Student" required>
+    <label for="student">Student</label><br><br>
+    
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+
+
